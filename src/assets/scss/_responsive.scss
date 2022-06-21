@@ -1,0 +1,43 @@
+// Responsive mixins 
+
+@mixin phoneSmall {
+    @media only screen and (min-width: 350px) {
+      @content;
+    }
+  }
+
+@mixin phone {
+    @media only screen and (min-width: 400px) {
+      @content;
+    }
+  }
+
+@mixin tabletSmall {
+    @media only screen and (min-width: 576px) {
+      @content;
+    }
+  }
+
+@mixin tabletMedium {
+    @media only screen and (min-width: 768px) {
+      @content;
+    }
+  }
+
+@mixin tabletLarge {
+    @media only screen and (min-width: 992px) {
+      @content;
+    }
+  }
+  
+  @mixin desktop {
+    @media only screen and (min-width: 1200px) {
+      @content;
+    }
+  }
+  
+  @mixin large {
+    @media only screen and (min-width: 1400px) {
+      @content;
+    }
+  }

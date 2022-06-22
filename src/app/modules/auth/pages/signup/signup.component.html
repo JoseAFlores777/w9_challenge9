@@ -1,1 +1,111 @@
-<p>signup works!</p>
+<div id="signupContainer">
+    <div id="signupBody">
+      <div id="signupTitle">Sign Up</div>
+  
+      <form id="signupForm" [formGroup]="signupForm" (ngSubmit)="signUp()" autocomplete="off">
+        <div id="firstName" class="form-group">
+          <mat-form-field hintLabel="Max 15 characters" appearance="outline">
+            <mat-label>first Name</mat-label>
+            <input matInput #input_firstName maxlength="15" minlength="4" formControlName="firstName" />
+            <mat-hint align="end">{{ input_firstName.value?.length || 0 }}/15</mat-hint>
+            <mat-error *ngIf="signupForm.controls['firstName'].invalid">
+              <div *ngIf="signupForm.controls['firstName'].hasError('required')">First Name is required.</div>
+              <div *ngIf="signupForm.controls['firstName'].hasError('minlength')">First Name must be at least 4 characters.</div>
+              <div *ngIf="signupForm.controls['firstName'].hasError('maxlength')">First Name must have a maximum of 15.</div>
+            </mat-error>
+          </mat-form-field>
+        </div>
+  
+        <div id="lastName" class="form-group">
+          <mat-form-field hintLabel="Max 15 characters" appearance="outline">
+            <mat-label>Last Name</mat-label>
+            <input matInput #input_lastName maxlength="15" minlength="4" formControlName="lastName" />
+            <mat-hint align="end">{{ input_lastName.value?.length || 0 }}/15</mat-hint>
+            <mat-error *ngIf="signupForm.controls['lastName'].invalid">
+              <div *ngIf="signupForm.controls['lastName'].hasError('required')">Last Name is required.</div>
+              <div *ngIf="signupForm.controls['lastName'].hasError('minlength')">Last Name must be at least 4 characters.</div>
+              <div *ngIf="signupForm.controls['lastName'].hasError('maxlength')">Last Name must have a maximum of 15.</div>
+            </mat-error>
+          </mat-form-field>
+        </div>
+  
+        <div id="username" class="form-group">
+          <mat-form-field hintLabel="Max 7 characters" appearance="outline">
+            <mat-label>Username</mat-label>
+            <input matInput #input_username maxlength="7" minlength="3" formControlName="username" autocomplete="off" />
+            <mat-hint align="end">{{ input_username.value?.length || 0 }}/7</mat-hint>
+            <mat-error *ngIf="signupForm.controls['username'].invalid">
+              <div *ngIf="signupForm.controls['username'].hasError('required')">username is required.</div>
+              <div *ngIf="signupForm.controls['username'].hasError('minlength')">Username must be at least 3 characters.</div>
+              <div *ngIf="signupForm.controls['username'].hasError('maxlength')">Username must have a maximum of 7.</div>
+            </mat-error>
+          </mat-form-field>
+        </div>
+  
+        <div id="email" class="form-group">
+          <mat-form-field appearance="outline">
+            <mat-label>Enter your email</mat-label>
+            <input matInput formControlName="email" required />
+            <mat-error *ngIf="signupForm.controls['email'].invalid">
+              <div *ngIf="signupForm.controls['email'].hasError('required')">Email is required.</div>
+              <div *ngIf="signupForm.controls['email'].hasError('email')">Invalid Email Format</div>
+            </mat-error>
+          </mat-form-field>
+        </div>
+  
+        <div id="password" class="form-group">
+          <mat-form-field appearance="outline">
+            <mat-label>Enter your password</mat-label>
+            <input matInput [type]="hidePassword ? 'password' : 'text'" formControlName="password" required />
+            <button type="button" mat-icon-button matSuffix (click)="hidePassword = !hidePassword" [attr.aria-label]="'hidePassword password'" [attr.aria-pressed]="hidePassword">
+              <mat-icon>{{ hidePassword ? 'visibility_off' : 'visibility' }}</mat-icon>
+            </button>
+            <mat-error *ngIf="signupForm.controls['password'].invalid">
+              <div *ngIf="signupForm.controls['password'].hasError('required')">Password is required.</div>
+              <div *ngIf="signupForm.controls['password'].hasError('passwordFormat')">
+                The password is too weak.
+                <span matTooltip="At least 8 characters,must contain at least 1 uppercase letter, 1 lowercase letter, and 1 number, Can contain special characters">
+                  <i class="fa-solid fa-circle-info"></i>
+                </span>
+              </div>
+            </mat-error>
+          </mat-form-field>
+        </div>
+  
+        <div id="confirmPassword" class="form-group">
+          <mat-form-field appearance="outline">
+            <mat-label>Confirm Password</mat-label>
+            <input matInput [type]="hideConfirmPassword ? 'password' : 'text'" formControlName="confirmPassword" required />
+            <button
+              type="button"
+              mat-icon-button
+              matSuffix
+              (click)="hideConfirmPassword = !hideConfirmPassword"
+              [attr.aria-label]="'hideConfirmPassword confirmPassword'"
+              [attr.aria-pressed]="hideConfirmPassword"
+            >
+              <mat-icon>{{ hideConfirmPassword ? 'visibility_off' : 'visibility' }}</mat-icon>
+            </button>
+            <mat-error *ngIf="signupForm.controls['confirmPassword'].invalid">
+              <div *ngIf="signupForm.controls['confirmPassword'].hasError('required')">Password is required.</div>
+              <div *ngIf="signupForm.controls['confirmPassword'].hasError('samePassword')">The password does not match</div>
+            </mat-error>
+          </mat-form-field>
+        </div>
+  
+        <button id="submitBtn" mat-raised-button type="submit" color="primary" [disabled]="signupForm.invalid">
+          <div id="loading" *ngIf="isLoading">
+            <i class="fa-solid fa-spinner fa-spin"></i>
+            Loading ...
+          </div>
+          <span *ngIf="!isLoading">Sign up</span>
+        </button>
+      </form>
+  
+      <div id="actionArea">
+        Already have an account?
+        <a routerLink="/auth/signin"> Sign in </a>
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,60 @@
+@import 'base';
+
+#footer {
+    //@include basicFooter();
+    mat-toolbar {
+        width: 100%;
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        #footerContent {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 60px;
+
+            #footerBrand {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                text-align: center;
+                justify-content: center;
+                gap: 10px;
+                margin: 20px;
+
+                .brandItem,
+                mat-icon {
+                    font-size: 20px;
+                }
+            }
+
+            #footerInfo {
+                font-size: 15px;
+                font-weight: 300;
+
+                @include phoneSmall {
+                    font-size: 10px;
+                }
+            }
+        }
+
+        @include tabletSmall {
+            #footerContent {
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-template-rows: auto auto;
+                align-items: center;
+                justify-content: center;
+                gap: 5px;
+
+                &>* {
+                    align-self: center;
+                    justify-self: center;
+                }
+            }
+        }
+
+    }
+}

@@ -1,0 +1,47 @@
+@use 'sass:map';
+@use '@angular/material' as mat;
+@use './themeColorClasses' as themeColorClasses;
+
+@include mat.core();
+
+$my-primary: mat.define-palette(mat.$deep-purple-palette, 500);
+$my-accent: mat.define-palette(mat.$amber-palette, A200, A100, A400);
+
+$my-theme: mat.define-light-theme((
+ color: (
+   primary: $my-primary,
+   accent: $my-accent,
+ )
+));
+
+@include mat.all-component-themes($my-theme); 
+@include themeColorClasses.theme($my-theme);
+@include mat.strong-focus-indicators-theme($my-theme);
+
+
+
+$color-config: mat.get-color-config($my-theme);
+
+
+
+$primary-50-palette: mat.get-color-from-palette(map.get($color-config, 'primary'),50);
+$primary-100-palette: mat.get-color-from-palette(map.get($color-config, 'primary'),100);
+$primary-200-palette: mat.get-color-from-palette(map.get($color-config, 'primary'),200);
+$primary-300-palette: mat.get-color-from-palette(map.get($color-config, 'primary'),300);
+$primary-400-palette: mat.get-color-from-palette(map.get($color-config, 'primary'),400);
+$primary-500-palette: mat.get-color-from-palette(map.get($color-config, 'primary'),500);
+
+$accent-50-palette: mat.get-color-from-palette(map.get($color-config, 'accent'),50);
+$accent-100-palette: mat.get-color-from-palette(map.get($color-config, 'accent'),100);
+$accent-200-palette: mat.get-color-from-palette(map.get($color-config, 'accent'),200);
+$accent-300-palette: mat.get-color-from-palette(map.get($color-config, 'accent'),300);
+$accent-400-palette: mat.get-color-from-palette(map.get($color-config, 'accent'),400);
+$accent-500-palette: mat.get-color-from-palette(map.get($color-config, 'accent'),500);
+
+$warn-50-palette: mat.get-color-from-palette(map.get($color-config, 'warn'),50);
+$warn-100-palette: mat.get-color-from-palette(map.get($color-config, 'warn'),100);
+$warn-200-palette: mat.get-color-from-palette(map.get($color-config, 'warn'),200);
+$warn-300-palette: mat.get-color-from-palette(map.get($color-config, 'warn'),300);
+$warn-400-palette: mat.get-color-from-palette(map.get($color-config, 'warn'),400);
+$warn-500-palette: mat.get-color-from-palette(map.get($color-config, 'warn'),500);
+

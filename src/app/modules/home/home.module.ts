@@ -1,12 +1,17 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 
-import { HomeRoutingModule } from './home-routing.module';
-import { HomeMainComponent } from './pages/home-main/home-main.component';
+import { CoreModule } from 'src/app/core/core.module';
+import { MaterialModule } from 'src/app/material/material.module';
+import { SharedModule } from 'src/app/shared/shared.module';
+import { CategoriesListComponent } from './components/categories-list/categories-list.component';
 import { HomeHeaderComponent } from './components/home-header/home-header.component';
-import { ProductListPageComponent } from './pages/product-list-page/product-list-page.component';
-import { ProductDetailsPageComponent } from './pages/product-details-page/product-details-page.component';
+import { ProfileInfoComponent } from './components/profile-info/profile-info.component';
+import { HomeRoutingModule } from './home-routing.module';
 import { CartPageComponent } from './pages/cart-page/cart-page.component';
+import { HomeMainComponent } from './pages/home-main/home-main.component';
+import { ProductDetailsPageComponent } from './pages/product-details-page/product-details-page.component';
+import { ProductListPageComponent } from './pages/product-list-page/product-list-page.component';
 
 
 @NgModule({
@@ -15,10 +20,15 @@ import { CartPageComponent } from './pages/cart-page/cart-page.component';
     HomeHeaderComponent,
     ProductListPageComponent,
     ProductDetailsPageComponent,
-    CartPageComponent
+    CartPageComponent,
+    ProfileInfoComponent,
+    CategoriesListComponent
   ],
   imports: [
     CommonModule,
+    MaterialModule,
+    CoreModule,
+    SharedModule,
     HomeRoutingModule
   ]
 })

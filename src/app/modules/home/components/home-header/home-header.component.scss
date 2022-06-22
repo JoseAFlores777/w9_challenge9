@@ -1,0 +1,51 @@
+@import 'base';
+
+#header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    #btnAndBrand{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+        
+        #brand {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: left;
+            gap: 10px;
+            margin: 20px;
+        }
+    }
+
+    #userActions{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+        margin: 20px;
+
+        #userBtn{
+
+              
+        }
+    }
+}
+
+
+
+#overlay {
+    width: auto;
+    border: solid 1px #ccc;
+    border-radius: 5px;
+    background-color: white;
+    text-align: center;
+    padding: 10px;
+    margin: 0;
+  }
+

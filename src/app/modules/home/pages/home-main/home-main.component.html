@@ -1,1 +1,29 @@
-<router-outlet></router-outlet>
+<app-home-header (onToogleSidenav)="drawer.toggle()"></app-home-header>
+
+
+
+
+        <mat-drawer-container id="content" autosize>
+                <mat-drawer #drawer class="sidenav" mode="side">
+
+                  <div id="profileInfo">
+                    <app-profile-info></app-profile-info>
+                  </div>
+
+                  <div id="productCategories">
+                    <mat-list-item><strong>Products Categories</strong></mat-list-item>
+                    <mat-divider></mat-divider>
+                    <div id="categoriesList">
+                      <app-categories-list></app-categories-list>
+                    </div>
+                  </div>
+                </mat-drawer>
+              
+                <div class="home-content" >
+                  <app-bread-crumbs></app-bread-crumbs>
+                <router-outlet></router-outlet>
+                </div>
+              
+              </mat-drawer-container>
+
+<app-footer></app-footer>

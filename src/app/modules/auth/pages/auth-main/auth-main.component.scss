@@ -1,0 +1,22 @@
+@import 'base';
+
+#content{
+    @include contentMinHeight();
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+
+    #formcCard{
+       width: auto;
+        margin-top: 50px;
+       
+        @include tabletSmall {
+            width: 100%;
+        }
+    }
+    
+}
+
+#footer{
+    @include basicFooter();
+}

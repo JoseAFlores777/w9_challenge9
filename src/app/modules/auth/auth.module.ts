@@ -6,6 +6,8 @@ import { AuthMainComponent } from './pages/auth-main/auth-main.component';
 import { SigninComponent } from './pages/signin/signin.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { CoreModule } from '../../core/core.module';
+import { MaterialModule } from '../../material/material.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -17,6 +19,8 @@ import { CoreModule } from '../../core/core.module';
   imports: [
     CommonModule,
     CoreModule,
+    ReactiveFormsModule,
+    MaterialModule,
     AuthRoutingModule
   ]
 })

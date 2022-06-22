@@ -1,0 +1,10 @@
+
+
+@mixin contentMinHeight() {
+  min-height: 100vh;    
+}
+
+@mixin basicFooter() {
+    width: 100%;
+    position: absolute;
+}

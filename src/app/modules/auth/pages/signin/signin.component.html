@@ -1,1 +1,59 @@
-<p>signin works!</p>
+<!-- <mat-card-title>Shiba Inu</mat-card-title>
+<mat-card-subtitle>Dog Breed</mat-card-subtitle>
+<mat-card-content>
+  <p>This card indeterminates progress bar.</p>
+</mat-card-content>
+<mat-card-actions>
+  <button mat-button>LIKE</button>
+  <button mat-button>SHARE</button>
+</mat-card-actions> -->
+
+<div id="signinContainer">
+    <div id="signinBody">
+      <div id="signinTitle">Sign In</div>
+  
+      <div class="alert-big alert-danger" *ngIf="signinForm.errors?.['siginFail']">
+        <div>Incorrect username or password.</div>
+      </div>
+      <div id="formBody">
+        <form id="signinForm" [formGroup]="signinForm" (ngSubmit)="signIn()">
+          <div class="form-group">
+            <mat-form-field appearance="outline">
+              <mat-label>Enter your email</mat-label>
+              <input matInput formControlName="email" required />
+              <mat-error *ngIf="signinForm.controls['email'].invalid">
+                <div *ngIf="signinForm.controls['email'].hasError('required')">Email is required.</div>
+                <div *ngIf="signinForm.controls['email'].hasError('email')">Invalid Email Format</div>
+              </mat-error>
+            </mat-form-field>
+          </div>
+  
+          <div class="form-group">
+            <mat-form-field appearance="outline">
+              <mat-label>Enter your password</mat-label>
+              <input matInput [type]="hide ? 'password' : 'text'" formControlName="password" required />
+              <button type="button" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
+              </button>
+              <mat-error *ngIf="signinForm.controls['password'].invalid">
+                <div *ngIf="signinForm.controls['password'].hasError('required')">Password is required.</div>
+              </mat-error>
+            </mat-form-field>
+          </div>
+  
+          <button id="submitBtn" mat-raised-button type="submit" color="primary" [disabled]="signinForm.invalid">
+            <div id="loading" *ngIf="isLoading">
+              <i class="fa-solid fa-spinner fa-spin"></i>
+              Loading ...
+            </div>
+            <span *ngIf="!isLoading">Sign in</span>
+          </button>
+        </form>
+      </div>
+      <div id="actionArea">
+        New Here?
+        <a routerLink="/auth/signup"> Create an account. </a>
+      </div>
+    </div>
+  </div>
+  

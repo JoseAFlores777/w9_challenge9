@@ -1,1 +1,47 @@
-<p>home-header works!</p>
+<mat-toolbar id="header" color="primary">
+    <div id="btnAndBrand">
+
+        <div id="sidenavToogleBtn">
+            <button mat-icon-button (click)="toogle()">
+                <mat-icon mat-font-icon="fa-icon" class="fa-solid" [ngClass]="{'fa-bars': !isOpen ,'fa-xmark':isOpen}">
+                </mat-icon>
+            </button>
+
+        </div>
+
+        <div id="brand">
+            <mat-icon mat-font-icon="fa-icon" class="fa-solid fa-basket-shopping"></mat-icon>
+            <span id="titleBrand" class="brand-item">
+                ShopiFast
+            </span>
+        </div>
+    </div>
+
+    <div id="userActions">
+        <div id="cartBtn">
+            <button mat-icon-button >
+                <mat-icon mat-font-icon="fa-icon" class="fa-solid fa-shopping-cart" matBadge="8" matBadgePosition="after" matBadgeColor="warn" matBadgeOverlap="false"></mat-icon>
+            </button>
+
+        </div>
+        <div id="userBtn">
+            <button mat-icon-button (click)="isOpenProfileInfo = !isOpenProfileInfo" cdkOverlayOrigin
+                #trigger="cdkOverlayOrigin">
+                <mat-icon mat-font-icon="fa-icon" class="fa-solid fa-user"></mat-icon>
+            </button>
+            <!-- This template displays the overlay content and is connected to the button -->
+            <ng-template cdkConnectedOverlay [cdkConnectedOverlayOrigin]="trigger"
+                [cdkConnectedOverlayOpen]="isOpenProfileInfo">
+                    <div id="overlay">
+                        <app-profile-info></app-profile-info>
+                        <div id="sessionOpts">
+                            <button mat-button (click)="logout()" color="primary" class="sessionOptItem">
+                              <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                              Log Out
+                            </button>
+                          </div>
+                    </div>
+            </ng-template>
+        </div>
+    </div>
+</mat-toolbar>

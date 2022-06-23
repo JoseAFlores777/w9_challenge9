@@ -1,1 +1,67 @@
-<p>cart-page works!</p>
+<div id="cartContainer">
+    <mat-card>
+        <table id="cartTable">
+            <thead id="cartTableHeader">
+                <th id="cartTableHeaderItem">
+                    <span>Item</span>
+                </th>
+                <th id="cartTableHeaderPrice">
+                    <span>Price</span>
+                </th>
+                <th id="cartTableHeaderQuantity">
+                    <span>Quantity</span>
+                </th>
+                <th id="cartTableHeaderTotal">
+                    <span>Total</span>
+                </th>
+
+            </thead>
+            <tbody class="cartTableBody">
+                <tr>
+                    <td class="cartTableBodyItem">
+                        <div class="imgItem"><img src="https://m.media-amazon.com/images/I/611aJxIHPAL.jpg" alt=""></div>
+                        <span>M&M's Peanut Butter</span>
+                    </td>
+                    <td class="cartTableBodyPrice">
+                        <span>$20.00</span>
+                    </td>
+                    <td class="cartTableBodyQuantity">
+                        <app-add-to-cart></app-add-to-cart>
+                    </td>
+                    <td class="cartTableBodyTotal">
+                        <span>$40.00</span>
+                    </td>
+
+                </tr>
+            </tbody>
+        </table>
+    </mat-card>
+
+    <mat-card id="orderCard">
+        <div id="orderTitle">
+            <span>Order</span>
+        </div>
+        <div id="orderDetails">
+            <div id="orderDetailsItem" class="detailsItem">
+                <span>Order Summary</span>
+                <span>$40.00</span>
+            </div>
+            <div id="orderDetailsShipping" class="detailsItem">
+                <span>Tax</span>
+                <span>$20.00</span>
+            </div>
+            <div id="orderDetailsTotal" class="detailsItem">
+                <span>Total Amount</span>
+                <span>$60.00</span>
+            </div>
+        </div>
+
+        <div id="orderButton">
+            <button mat-raised-button color="primary">
+                <mat-icon mat-font-icon="fa-icon" class="fa-solid fa-credit-card"></mat-icon>
+                <span>Checkout</span>
+            </button>
+        </div>
+
+    </mat-card>
+</div>

@@ -1,3 +1,14 @@
-<div id="content">
-    <p>product-list-page works!</p>
-</div>
+<mat-form-field class="search-field" appearance="fill">
+    <mat-label>
+        <mat-icon  mat-font-icon="fa-icon" class="fa-solid fas fa-search"></mat-icon>
+        Search 
+    </mat-label>
+    <input matInput type="text" [(ngModel)]="value">
+    <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-form-field>
+
+  <div id="productListContent">
+    <app-product-card *ngFor="let product of [1,1,1,1,1,1,1]" ></app-product-card>
+  </div>

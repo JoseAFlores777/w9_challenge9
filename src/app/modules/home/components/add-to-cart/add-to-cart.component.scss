@@ -1,0 +1,40 @@
+@import 'base';
+#addToCartBtn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    mat-icon{
+        font-size: 15px;
+        display: contents;
+    }
+}
+#addToCartContent{
+    
+    #addQtyBtns{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+    
+    .prodQty{
+        font-size: medium;
+        font-weight: bold;
+        color: $primary-500-palette;
+    }
+    
+    button{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 30px;
+        width: 30px;
+        mat-icon{
+            font-size: 15px;
+            display: contents;
+        }
+    }
+    }
+}

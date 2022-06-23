@@ -3,8 +3,8 @@
 
 
 
-        <mat-drawer-container id="content" autosize>
-                <mat-drawer #drawer class="sidenav" mode="side">
+        <mat-drawer-container id="content" autosize [hasBackdrop] = false>
+                <mat-drawer #drawer class="sidenav" mode="side" >
 
                   <div id="profileInfo">
                     <app-profile-info></app-profile-info>
@@ -21,7 +21,9 @@
               
                 <div class="home-content" >
                   <app-bread-crumbs></app-bread-crumbs>
-                <router-outlet></router-outlet>
+                <div id="dynamicContent">
+                  <router-outlet></router-outlet>
+                </div>
                 </div>
               
               </mat-drawer-container>

@@ -1,1 +1,56 @@
-<p>product-details-page works!</p>
+<mat-card>
+
+    <div id="productInfo">
+        <div id="productImg">
+            <img src="https://m.media-amazon.com/images/I/611aJxIHPAL.jpg" alt="">
+        </div>
+
+        <div id="productDetails">
+            <mat-card-content>
+                <div class="headerContent">
+                  <div class="principalInfo">
+                    <mat-card-title>M&M's Peanut Butter</mat-card-title>
+                    <mat-card-subtitle>Jewelry</mat-card-subtitle>
+                  </div>
+                  <app-likes-button class="heartBtn"></app-likes-button>
+                </div>
+                <div class="bodyContent">
+                  <div class="description">
+                    <p>
+                      Mini Candy
+                    </p>
+                  </div>
+                  <div class="detailsTable">
+                      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+                          <mat-text-column name="detail"></mat-text-column>
+                          <mat-text-column name="value"></mat-text-column>                        
+                          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                        </table>
+                    </div>
+
+
+                  <div class="productPrice">
+                    <span>$ 200.00</span>
+                  </div>
+                </div>
+
+
+              </mat-card-content>
+
+              <mat-card-actions id="footerContent">
+                <div class="actionButtons">
+            
+                  <app-add-to-cart class="actionButtonsItem"></app-add-to-cart>
+                </div>
+                
+              </mat-card-actions>
+
+
+        </div>
+    </div>
+
+
+
+
+</mat-card>

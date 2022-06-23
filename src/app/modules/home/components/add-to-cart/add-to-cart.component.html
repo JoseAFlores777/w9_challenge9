@@ -1,0 +1,17 @@
+<button id="addToCartBtn"  mat-flat-button color="primary" *ngIf="productQty == 0" (click)="add()">
+    <mat-icon mat-font-icon="fa-icon" class="fa-solid fa-cart-plus"></mat-icon>
+</button>
+
+<div id="addToCartContent">
+
+<div id="addQtyBtns" *ngIf="productQty > 0">
+    
+        <button class="plusBtn contentItem" mat-mini-fab color="accent" (click)="add()">
+           <mat-icon mat-font-icon="fa-icon" class="fa-solid fa-plus"></mat-icon>
+          </button>
+          <span class="prodQty contentItem" [innerText]="productQty"></span>
+          <button class="minusBtn contentItem" mat-mini-fab color="accent" (click)="substract()">
+            <mat-icon mat-font-icon="fa-icon" class="fa-solid fa-minus"></mat-icon>
+          </button>
+</div>
+</div>

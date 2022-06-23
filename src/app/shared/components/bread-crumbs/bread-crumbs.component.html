@@ -1,14 +1,18 @@
 
-
-
 <div id="breadcrumbs">
-    <div id="breadcrumbsTitle">
-        <span>Home</span>
+    <div id="breadcrumbs-content">
+      <div id="breadcrumbs-title">
+        <span>{{title}}</span>
+      </div>
+      <div id="breadcrumbs-items">
+        <div class="breadcrumbs-item">
+          <a routerLink="/home" >Home</a>
+        </div>
+        <span>/</span>
+        <div class="breadcrumbs-item">
+          <a  class="breadcrumbs-item active">{{title}}</a>
+        </div>
+      </div>
     </div>
-    <ul id="breacrumbs-list">
-      <li><a routerLink="/home">Home</a></li>
-      <li>/</li>
-      <li><a class="active" routerLink="/home">Product List</a></li>
-    </ul>
   </div>
   

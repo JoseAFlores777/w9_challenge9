@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeMainComponent implements OnInit {
 
-   showFiller = false;
+  showFiller = false;
 
   constructor() { }
 

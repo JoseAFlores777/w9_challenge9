@@ -1,0 +1,34 @@
+<mat-card class="product-card">
+
+  <img mat-card-image src="https://walmarthn.vtexassets.com/arquivos/ids/227928/Cereal-Nestle-Cheerios-De-Miel-Caja-480gr-1-11870.jpg" alt="Photo of a Shiba Inu">
+  <mat-card-content>
+    <div class="headerContent">
+      <div class="principalInfo">
+        <mat-card-title>M&M's Peanut Butter</mat-card-title>
+        <mat-card-subtitle>Jewelry</mat-card-subtitle>
+      </div>
+      <app-likes-button class="heartBtn"></app-likes-button>
+    </div>
+    <div class="bodyContent">
+      <div class="description">
+        <p>
+          Mini Candy
+        </p>
+      </div>
+      <div class="productPrice">
+        <span>$ 200.00</span>
+      </div>
+    </div>
+  </mat-card-content>
+  <mat-card-actions class="footerContent">
+    <div class="actionButtons">
+
+      <app-add-to-cart class="actionButtonsItem"></app-add-to-cart>
+      <button class="actionButtonsItem" routerLink="/home/product/3"  mat-flat-button color="primary" >
+        <mat-icon mat-font-icon="fa-icon" class="fa-solid fa-eye"></mat-icon>
+      </button>
+
+    </div>
+    
+  </mat-card-actions>
+</mat-card>

@@ -1,8 +1,18 @@
 @import 'base';
 
-#content{
-    width: 100%;
-    height: 100vh;
-    background-color: $primary-300-palette;
+.search-field {
+    width: 400px;
+    
+    @include tabletSmall{
+        width: 100%;
+    }
+  }
 
-}
+  #productListContent {
+
+	display: flex;
+justify-content: center;
+	justify-content: center;
+flex-wrap: wrap;
+	flex-wrap: wrap;
+  }

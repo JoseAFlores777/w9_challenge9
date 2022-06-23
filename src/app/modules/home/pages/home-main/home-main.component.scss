@@ -9,6 +9,10 @@
 
   .home-content {
     padding: 20px;
+
+    #dynamicContent{
+      margin-top: 40px;
+    }
   }
 
   .sidenav {
@@ -18,13 +22,7 @@
     grid-template-columns: 1fr;
     grid-template-rows: auto auto;
     gap: 10px;
-    
-    .mat-drawer-inner-container{
-      overflow: hidden !important;
-    }
 
-
-    #profileInfo {}
 
     #productCategories {
       margin-top: 40px;

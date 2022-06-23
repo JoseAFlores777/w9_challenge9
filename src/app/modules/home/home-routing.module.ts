@@ -12,15 +12,18 @@ const routes: Routes = [
     children: [
       {
         path: 'products',
-        component: ProductListPageComponent
+        component: ProductListPageComponent,
+        data: { title: 'Product List' }
       },
       {
         path: 'product/:id',
-        component: ProductDetailsPageComponent
+        component: ProductDetailsPageComponent,
+        data: { title: 'Product Details' }
       },
       {
         path: 'cart',
-        component: CartPageComponent
+        component: CartPageComponent,
+        data: { title: 'My Cart' }
       },
       {
         path: '',

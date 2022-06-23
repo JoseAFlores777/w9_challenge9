@@ -19,6 +19,18 @@
             justify-content: left;
             gap: 10px;
             margin: 20px;
+            font-size: 40px;
+
+            mat-icon{
+                font-size: 30px;
+                display: contents;
+            }
+        }
+
+        #sidenavToogleBtn{
+            button{
+                background-color: $primary-400-palette;
+            }
         }
     }
 
@@ -27,7 +39,7 @@
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        gap: 10px;
+        gap: 20px;
         margin: 20px;
 
         #userBtn{

@@ -1,0 +1,149 @@
+@import 'base';
+
+#cartContainer {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto 1fr;
+    grid-template-areas: "cart""order";
+    gap: 20px;
+
+    #cartTable {
+        grid-area: cart;
+        width: 100%;
+        border-collapse: collapse;
+
+        #cartTableHeader {
+            border-bottom: 1px solid #999;
+            width: 25%;
+            height: 80px;
+            font-size: 20px;
+            font-weight: bold;
+            color: $primary-500-palette;
+            background-color: $primary-50-palette;
+
+        }
+
+
+        .cartTableBody {
+            font-size: medium;
+            font-weight: 400;
+            color: $primary-400-palette;
+            text-align: center;
+
+
+            .cartTableBodyItem {
+                display: flex;
+                justify-content: left;
+                align-items: center;
+                gap: 20px;
+                font-weight: 700;
+                font-size: 20px;
+
+                .imgItem {
+                    grid-area: image;
+                    display: flex;
+                    width: auto;
+                    height: 100px;
+                    overflow: hidden;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    img {
+                        height: 100px;
+                        border-radius: $border-radius;
+                        width: auto;
+                    }
+                }
+            }
+
+            .cartTableBodyPrice {
+                width: 20%;
+            }
+
+            .cartTableBodyQuantity {
+                width: 20%;
+            }
+
+            .cartTableBodyTotal {
+                width: 20%;
+            }
+
+        }
+    }
+
+    #orderCard {
+        min-width: 500px;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        grid-template-areas: "orderTitle""orderContent";
+        justify-self: end;
+        gap: 20px;
+
+        #orderTitle {
+            grid-area: orderTitle;
+            font-size: 20px;
+            font-weight: bold;
+            color: $primary-500-palette;
+            background-color: $primary-50-palette;
+            height: 50px;
+            text-align: center;
+            vertical-align: middle;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #orderDetails {
+            grid-area: orderContent;
+            font-size: 17px;
+            font-weight: normal;
+            color: $primary-500-palette;
+            display: grid;
+            gap: 10px;
+
+            .detailsItem {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                gap: 20px;
+                font-weight: 300;
+                font-size: 20px;
+            }
+
+            #orderDetailsTotal {
+                margin-top: 20px;
+                font-weight: bold;
+                font-size: 20px;
+                color: $primary-500-palette;
+            }
+
+        }
+
+        #orderButton {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+
+            button {
+                width: 100%;
+                height: 50px;
+                font-size: 20px;
+
+                span {
+                    margin-left: 20px;
+                }
+            }
+        }
+
+        @include tabletSmall{
+            #orderCard{
+                width: 100%;
+
+            }
+        }
+    }
+}

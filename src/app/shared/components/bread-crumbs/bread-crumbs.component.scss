@@ -2,50 +2,43 @@
 
 #breadcrumbs {
 
-    width: 100%;
-    height: 40px;
-    display: flex;
-    flex-direction: row;
-    align-content: center;
-    justify-content: space-between;
+  #breadcrumbs-content {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: 'breadcrumbs_title breadcrumbs';
 
-    #breadcrumbsTitle {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-self: left;
-        font-size: 40px;
-        font-weight: 700;
-        color: $primary-400-palette;
-
-        margin-right: 20px;
+    #breadcrumbs-title {
+      grid-area: breadcrumbs_title;
+      font-size: 30px;
+      font-weight: 500;
+      color: $primary-500-palette;
     }
 
+    #breadcrumbs-items {
+      grid-area: breadcrumbs;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      color: $primary-200-palette;
+      gap: 5px;
 
-    #breacrumbs-list {
+      a {
+        text-decoration: none
+      }
 
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-self: right;
-
-        li {
-            list-style: none;
-            margin-right: 5px;
-            font-size: 15px;
-            color: $primary-100-palette;
-
-            a {
-                text-decoration: none;
-                color: $primary-400-palette;
-                cursor: pointer;
-            }
-        }
+      .breadcrumbs-item:hover {
+        text-decoration: underline;
+        cursor: pointer;
+      }
     }
-}
 
-.active {
-    color: $primary-500-palette  !important;
-    font-weight: bolder;
-    cursor: none;
+    @include tabletSmall{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: 'breadcrumbs_title''breadcrumbs';
+        gap: 20px;
+    }
+  }
 }

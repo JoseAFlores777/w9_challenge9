@@ -1,0 +1,12 @@
+@import 'base';
+
+#thumbs{
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 20px;
+
+.number-item{
+    margin-left: 5px;
+}
+}	

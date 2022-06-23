@@ -1,0 +1,19 @@
+<div id="thumbs">
+    <!-- thums up -->
+
+    <button mat-icon-button (click)="onLike()">
+
+        <mat-icon mat-font-icon="fa-icon" class="fa-thumbs-up fa-solid"
+            [ngStyle]="isLiked === true ? {color: 'blue'} : {color: 'gray'}">
+        </mat-icon>
+        <span class="number-item">20</span>
+    </button>
+
+    <!-- thums down -->
+    <button mat-icon-button (click)="onDislike()">
+
+        <mat-icon mat-font-icon="fa-icon" class="fa-thumbs-down fa-solid"
+            [ngStyle]="isLiked === false ? {color: 'red'} : {color: 'gray'}"></mat-icon>
+        <span class="number-item">20</span>
+    </button>
+</div>

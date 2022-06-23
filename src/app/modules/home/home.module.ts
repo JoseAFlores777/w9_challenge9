@@ -16,6 +16,8 @@ import { HomeMainComponent } from './pages/home-main/home-main.component';
 import { ProductDetailsPageComponent } from './pages/product-details-page/product-details-page.component';
 import { ProductListPageComponent } from './pages/product-list-page/product-list-page.component';
 import { AddToCartComponent } from './components/add-to-cart/add-to-cart.component';
+import { StoreModule } from '@ngrx/store';
+import { HomeReducer } from './store/home.reducer';
 
 
 @NgModule({
@@ -39,6 +41,7 @@ import { AddToCartComponent } from './components/add-to-cart/add-to-cart.compone
     CoreModule,
     SharedModule,
     FormsModule,
+    StoreModule.forFeature('home', HomeReducer),
     HomeRoutingModule
   ]
 })

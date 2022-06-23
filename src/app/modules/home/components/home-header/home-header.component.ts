@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home-header',
@@ -11,7 +12,7 @@ export class HomeHeaderComponent implements OnInit {
   isOpen: boolean = false;
   isOpenProfileInfo: boolean = false;
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit(): void {}
 
@@ -20,5 +21,7 @@ export class HomeHeaderComponent implements OnInit {
     this.onToogleSidenav.emit(this.isOpen);
   }
 
-  logout() {}
+  logout() {
+    this.router.navigateByUrl('/auth/signin');
+  }
 }

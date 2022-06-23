@@ -1,0 +1,1 @@
+export * as categoriesActions from './categories.actions';

@@ -8,6 +8,8 @@ import { SignupComponent } from './pages/signup/signup.component';
 import { CoreModule } from '../../core/core.module';
 import { MaterialModule } from '../../material/material.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { StoreModule } from '@ngrx/store';
+import { authReducer } from './store/auth.reducer';
 
 
 @NgModule({
@@ -21,6 +23,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     CoreModule,
     ReactiveFormsModule,
     MaterialModule,
+    StoreModule.forFeature('auth', authReducer),
     AuthRoutingModule
   ]
 })

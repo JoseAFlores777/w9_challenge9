@@ -10,6 +10,9 @@ import { MaterialModule } from '../../material/material.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { StoreModule } from '@ngrx/store';
 import { authReducer } from './store/auth.reducer';
+import { EffectsModule } from '@ngrx/effects';
+import { SessionUserEffectsArray } from './store/effects';
+
 
 
 @NgModule({
@@ -23,7 +26,8 @@ import { authReducer } from './store/auth.reducer';
     CoreModule,
     ReactiveFormsModule,
     MaterialModule,
-    StoreModule.forFeature('auth', authReducer),
+    StoreModule.forFeature('sessionUser', authReducer),
+    EffectsModule.forFeature(SessionUserEffectsArray),
     AuthRoutingModule
   ]
 })

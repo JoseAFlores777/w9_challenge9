@@ -4,3 +4,7 @@ export interface Category{
     description: string;
     image: string;
 }
+
+export interface Categories{
+    categories: Category[];
+}

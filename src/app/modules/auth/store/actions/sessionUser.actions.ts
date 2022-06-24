@@ -1,17 +1,18 @@
 import { createAction, props } from '@ngrx/store';
+import { SignInRequest, SignInResponse } from '../../../../core/models/auth.httpModels';
 
 
-export const loadSessionUser = createAction(
+export const signinUser = createAction(
     '[Usuario] Load SessionUser',
-    props<{ id: string }>()
+    props<{ reqBody: SignInRequest }>()
 );
 
-export const loadSessionUserSuccess = createAction(
+export const signinUserSuccess = createAction(
     '[Usuario] Load SessionUser Success',
-    props<{ sessionUser: any }>()
+    props<{ resBody: SignInResponse }>()
 );
 
-export const loadSessionUserError = createAction(
+export const signinUserError = createAction(
     '[SessionUser] Load SessionUser Error',
     props<{ payload: any }>()
 );

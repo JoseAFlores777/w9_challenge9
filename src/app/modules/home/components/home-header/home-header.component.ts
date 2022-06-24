@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
+import { LocalStorageService } from '../../../../core/services/local-storage.service';
 
 @Component({
   selector: 'app-home-header',
@@ -12,7 +13,7 @@ export class HomeHeaderComponent implements OnInit {
   isOpen: boolean = false;
   isOpenProfileInfo: boolean = false;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private localStorageService:LocalStorageService) {}
 
   ngOnInit(): void {}
 
@@ -22,6 +23,7 @@ export class HomeHeaderComponent implements OnInit {
   }
 
   logout() {
+    this.localStorageService.remove('token');
     this.router.navigateByUrl('/auth/signin');
   }
 }

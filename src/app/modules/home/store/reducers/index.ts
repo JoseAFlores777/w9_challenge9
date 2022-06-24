@@ -1,1 +1,1 @@
-export * from './categories.reducer';
+export * from './productCategories.reducer';

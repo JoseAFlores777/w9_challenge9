@@ -3,9 +3,9 @@ import * as mainState from '../../../store/app.reducer';
 import { ActionReducerMap } from '@ngrx/store';
 
 export interface AppState extends mainState.AppState { 
-    categories: reducers.CategoriesState;
+    productCategories: reducers.ProductCategoriesState;
 }
 
 export const HomeReducer: ActionReducerMap<AppState> = {
-    categories: reducers.categoryReducer
+    productCategories: reducers.ProductCategoriesReducer
 }

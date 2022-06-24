@@ -1,1 +1,1 @@
-export * as categoriesActions from './categories.actions';
+export * as categoriesActions from './productCategories.actions';

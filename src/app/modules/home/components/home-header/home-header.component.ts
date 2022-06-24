@@ -1,6 +1,9 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
+import { Store } from '@ngrx/store';
 import { LocalStorageService } from '../../../../core/services/local-storage.service';
+import * as fromauthReducer from '../../../auth/store/auth.reducer';
+import { signOutUser } from '../../../auth/store/actions/sessionUser.actions';
 
 @Component({
   selector: 'app-home-header',
@@ -13,7 +16,10 @@ export class HomeHeaderComponent implements OnInit {
   isOpen: boolean = false;
   isOpenProfileInfo: boolean = false;
 
-  constructor(private router: Router, private localStorageService:LocalStorageService) {}
+  constructor(private router: Router,
+    private localStorageService: LocalStorageService,
+
+  ) { }
 
   ngOnInit(): void {}
 

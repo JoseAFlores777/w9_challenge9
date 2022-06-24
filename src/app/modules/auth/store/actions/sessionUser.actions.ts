@@ -17,3 +17,8 @@ export const signinUserError = createAction(
     props<{ payload: any }>()
 );
 
+
+export const signOutUser = createAction(
+    '[Usuario] Signout SessionUser'
+);
+

@@ -47,6 +47,13 @@ export const sessionUserReducer = createReducer(
             name: payload.name,
             message: payload.message
         }
+    })),
+    on(sessionUserActions.signOutUser, (state) => ({
+        ...state,
+        user: null,
+        loaded: false,
+        loading: false,
+        error: null
     }))
 );
 

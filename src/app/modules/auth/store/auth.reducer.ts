@@ -9,3 +9,5 @@ export interface AppState extends mainState.AppState {
 export const authReducer: ActionReducerMap<AppState> = {
     sessionUser: reducers.sessionUserReducer
 }
+
+
